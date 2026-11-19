@@ -31,3 +31,17 @@ Focused contact-region capture inspected at 1129 × 420; phone digits, labels, d
 
 ## Follow-up polish
 P3: library icon silhouettes and font glyphs differ slightly from the generated source. No remaining blocking findings. RealManage number and photo-report email remain community-provided; current operating conditions are unverified.
+
+## Questionnaire and map update
+
+final result: passed
+
+User explicitly requested a city → service → resources flow replacing the directory, plus a sand pickup map. The earlier supplied image remains the visual-system reference, not a requirement to retain the old directory structure. Both source and new desktop screenshot were displayed together for style comparison. Desktop viewport 1440 × 1024 CSS pixels; original source approximately 1488 × 1058; widths differ by 48px, so comparison assesses retained sidebar, colors, font hierarchy, and content fit rather than pixel equality. Mobile 390 × 844; full-page screenshots used for content flow.
+
+Evidence: help-questionnaire.png, help-mobile.png, sand-map-preview.png. Map popup content inspected separately after Show on map; map tiles and all four sourced pins rendered. The Armory listing intentionally has directions but no unverified coordinate pin.
+
+Typography: consistent Arial/Helvetica, 44px desktop questionnaire headings and 33px mobile headings; clear field labels and readable results. Spacing: single primary question, three-step indicator, stacked choices and responsive results; mobile document width equals viewport (390px). Colors: existing navy, blue, red emergency strip, and amber availability notices retained. Assets: provided wordmark, Phosphor icons, Leaflet standard markers and attributed OSM tiles. Content: city scope, utility jurisdiction, historical Dania site and unconfirmed availability are explicit. No actionable P0/P1/P2 findings. Minor source-specific icon differences remain P3 from original implementation.
+
+Browser checks: Hollywood → flooding shows City hotline; change city clears the service choice; Dania Beach → sandbags opens Dania-filtered map; Fort Lauderdale flooding shows clearly labeled county referrals; city map filter works; Show on map opens matching popup; directions and phone targets inspected. Mobile results and map have no horizontal overflow. Console errors: none. Four routing/data tests pass, including every city-service combination and exclusion of Hollywood-only contacts elsewhere. Production build passes.
+
+Screenshot note: the browser full-page capture can visually relocate an offscreen fixed skip link; read-only DOM inspection confirmed the unfocused link is at top -80px and the active element is the intended heading. This is capture behavior, not a visible layout overlap in the page viewport.
