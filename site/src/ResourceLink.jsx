@@ -14,7 +14,7 @@ const checkedDates = {
   'https://www.daniabeachfl.gov/public-services': '2026-11-18',
   'https://www.saj.usace.army.mil/Missions/Regulatory/Public-Notices/Article/3919359/saj-2024-02796sp-jlm/': '2026-11-18',
 };
-export function ResourceLink({href, children, ...props}) {
- const checked = checkedDates[href];
- return <span className="resource-link"><a href={href} {...props}>{children}</a><small className="link-checked">{checked ? <>Last checked: <time dateTime={checked}>November 18, 2026</time></> : 'Not yet checked'}</small></span>;
+export function ResourceLink({href, children, checkedAt, ...props}) {
+ const checked = checkedAt || checkedDates[href];
+ return <span className="resource-link"><a href={href} {...props}>{children}</a><small className="link-checked">{checked ? <>Last checked: <time dateTime={checked}>{new Date(checked+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}</time></> : 'Not yet checked'}</small></span>;
 }
