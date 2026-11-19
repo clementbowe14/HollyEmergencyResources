@@ -10,7 +10,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Product preferences
 - Get Help is a guided questionnaire: Broward city first, service second, then relevant results. Keep 911 visible throughout.
-- Keep the navy/blue visual system and neighborhood-initiative notice requested by the user.
+- Use the supplied light-blue reference: pale background, navy text, compact top navigation, rounded white service cards and blue icon tiles. Keep the neighborhood-initiative notice requested by the user.
 - Sand pickup map covers Hollywood and Dania Beach. Distinguish sand pickup, empty bags/verification, and historical distribution sites. Never imply live availability from historical sources.
 - The app is named VELPAZO, with an uppercase `VELPAZO` text wordmark. Preserve geographic names in service information.
 
