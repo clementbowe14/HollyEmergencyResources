@@ -2,3 +2,5 @@
 .skip{top:10px;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;padding:0;white-space:nowrap}.skip:focus{clip-path:none;width:auto;height:auto;padding:15px}
 
 .matched-resources .status-label{margin-top:12px}.resource-locations{padding-left:22px;color:var(--muted);line-height:1.6;margin:0 0 22px}.resource-locations li+li{margin-top:12px}.resource-locations span{display:block}.resource-locations strong{color:var(--navy)}.map-result-button{margin-top:24px}
+/* Additional reporting links wrap without crowding tablet navigation. */
+.app-header nav{flex-wrap:wrap}
