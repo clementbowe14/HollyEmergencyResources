@@ -1,47 +1,34 @@
-# Design verification
+# VELPAZO reference-inspired redesign
 
 final result: passed
 
-Source visual truth: /Users/clementbowe/Documents/ChatGPT Image Nov 18, 2026, 07_50_02 PM.png
-Implementation: http://127.0.0.1:4173/#help
-Screenshots: desktop-preview.png and mobile-preview.png in this directory.
+## Visual evidence
+- Source: /Users/clementbowe/Library/Messages/Attachments/3a/10/87CDD378-B3EF-46DA-A0EE-E4EAAA88ACCD/PNG image.png (1036 × 1270 pixels).
+- Desktop implementation: /private/tmp/velpazo-redesign-desktop.png (1036 × 1508 full page; viewport 1036 × 1270 CSS pixels).
+- Mobile implementation: /private/tmp/velpazo-redesign-mobile.png (390px wide full page; viewport 390 × 844 CSS pixels).
+- Map evidence: /private/tmp/velpazo-redesign-map-mobile.png.
+- State: Hollywood selected, service selection step. Source and desktop screenshots were opened together in one comparison input at matching width without resampling. Full-page height differs because existing notice, navigation and questionnaire controls are retained.
 
-Desktop viewport: 1488 × 1058 CSS pixels; reference approximately 1488 × 1058 pixels. Browser screenshots use CSS-pixel dimensions; the full-page final capture includes the source disclosure below the reference fold. Comparison used the same Get help state and viewport, with both reference and implementation displayed together. Mobile: 390 × 844 viewport, full-page capture. No horizontal overflow (document width 390px).
+## Findings and comparison history
+- Initial mobile capture: P2 skip link appeared over emergency content in a scrolled full-page capture. Replaced negative top positioning with clipped hiding and an explicit visible keyboard-focus state. Recaptured and visually inspected mobile evidence; overlap resolved.
+- No remaining actionable P0/P1/P2 findings.
 
-## Findings and iteration history
-Initial capture: P2 phone columns shifted by number length; sidebar was 9px narrower than reference. Fixed using a shared 250px phone grid track and 313px sidebar. Increased desktop heading to 55px and tuned contact row spacing. Recaptured and compared both images together. No remaining actionable P0/P1/P2 issues.
+## Required surfaces
+- Typography: Arial provides a close sans-serif match, navy heading hierarchy and readable card labels. Mobile labels wrap without clipping.
+- Spacing: 24px desktop card radii, 72px blue icon tiles and approximately 118px cards reflect the reference. At 390px, icons and spacing scale down without horizontal overflow.
+- Colors: pale blue page, white cards, blue borders/actions, muted blue supporting text and soft red emergency callout match the reference direction.
+- Assets: existing Phosphor library supplies crisp icons, including HandHeart branding; no raster assets or generated illustrations needed. HandHeart is a library approximation of the reference symbol.
+- Content: situation-based labels use existing services. Exact requested resource notice, recorded link dates, contact data, historical sand-site status and neighborhood disclaimer remain.
+- Intentional differences: source is inspiration, not a literal clone. Retain city-first flow, existing services and page navigation. No untranslated language toggle or unimplemented shelter/weather/preparedness actions. Emergency action stays near the top.
+- Focused crops not needed: card typography, borders, icons and labels were readable in the full-width combined comparison and mobile capture.
 
-## Fidelity surfaces
-- Typography: Arial/Helvetica provides a close available sans-serif match. Hierarchy, readable contact labels, bold numbers and headline preserved. Minor glyph differences are P3.
-- Spacing: sidebar, emergency strip, directory, two supporting sections and community note retain the reference hierarchy. Phone and call columns align. Additional pickup link and source disclosure are intentional functional additions.
-- Colors: navy sidebar, blue primary actions, red emergency banner and amber unconfirmed labels preserved with readable contrast.
-- Assets: original provided wordmark cropped into a local asset. Phosphor library icons used, with small silhouette differences (P3); no custom-drawn substitute assets.
-- Copy: reference headline and contact content preserved. Expanded secondary views include original user material, explicit uncertainty, official source links and corrected county call-center distinction.
+## Verification
+- Browser: city selection → service selection → Hollywood flooding results; checked date labels and telephone destinations visible.
+- Sand map: Dania Beach filter shows Frost Park; historical status retained.
+- Report page: email action retains composed subject/body. Community page opens RealManage details.
+- Viewport: 390px document width equals 390px viewport; no horizontal overflow. Temporary viewport override reset afterward.
+- Browser console errors: none returned.
+- Production build and four resource routing tests passed before final CSS-only skip-link correction; final build run after correction.
 
-Focused contact-region capture inspected at 1129 × 420; phone digits, labels, dividers and call controls readable. Full-view paired comparison sufficient for other regions. Mobile full-page evidence inspected: navigation wraps into two columns, contact actions remain visible, supporting areas stack cleanly.
-
-## Interaction verification
-- Reporting details opens reporting view; All contacts returns home.
-- Sandbags and Carriage Hills navigation open the corresponding content.
-- Mobile Report flooding and return navigation work.
-- Telephone and mailto destinations inspected without initiating real calls or sending email.
-- Email template includes address, description, observation time and attachment reminder.
-- Browser console error log empty.
-- Production build passed.
-
-## Follow-up polish
-P3: library icon silhouettes and font glyphs differ slightly from the generated source. No remaining blocking findings. RealManage number and photo-report email remain community-provided; current operating conditions are unverified.
-
-## Questionnaire and map update
-
-final result: passed
-
-User explicitly requested a city → service → resources flow replacing the directory, plus a sand pickup map. The earlier supplied image remains the visual-system reference, not a requirement to retain the old directory structure. Both source and new desktop screenshot were displayed together for style comparison. Desktop viewport 1440 × 1024 CSS pixels; original source approximately 1488 × 1058; widths differ by 48px, so comparison assesses retained sidebar, colors, font hierarchy, and content fit rather than pixel equality. Mobile 390 × 844; full-page screenshots used for content flow.
-
-Evidence: help-questionnaire.png, help-mobile.png, sand-map-preview.png. Map popup content inspected separately after Show on map; map tiles and all four sourced pins rendered. The Armory listing intentionally has directions but no unverified coordinate pin.
-
-Typography: consistent Arial/Helvetica, 44px desktop questionnaire headings and 33px mobile headings; clear field labels and readable results. Spacing: single primary question, three-step indicator, stacked choices and responsive results; mobile document width equals viewport (390px). Colors: existing navy, blue, red emergency strip, and amber availability notices retained. Assets: provided wordmark, Phosphor icons, Leaflet standard markers and attributed OSM tiles. Content: city scope, utility jurisdiction, historical Dania site and unconfirmed availability are explicit. No actionable P0/P1/P2 findings. Minor source-specific icon differences remain P3 from original implementation.
-
-Browser checks: Hollywood → flooding shows City hotline; change city clears the service choice; Dania Beach → sandbags opens Dania-filtered map; Fort Lauderdale flooding shows clearly labeled county referrals; city map filter works; Show on map opens matching popup; directions and phone targets inspected. Mobile results and map have no horizontal overflow. Console errors: none. Four routing/data tests pass, including every city-service combination and exclusion of Hollywood-only contacts elsewhere. Production build passes.
-
-Screenshot note: the browser full-page capture can visually relocate an offscreen fixed skip link; read-only DOM inspection confirmed the unfocused link is at top -80px and the active element is the intended heading. This is capture behavior, not a visible layout overlap in the page viewport.
+## Follow-up
+- Translation and additional service categories from the inspiration image are outside this visual redesign.
