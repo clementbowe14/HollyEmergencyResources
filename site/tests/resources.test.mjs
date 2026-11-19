@@ -27,3 +27,11 @@ test('map filters isolate cities and preserve historical flags and coordinate in
  for(const s of sandLocations)if(s.position)assert.ok(s.position.length===2&&s.position.every(Number.isFinite));
  assert.equal(new Set(sandLocations.map(s=>s.id)).size,sandLocations.length);
 });
+test('Hollywood damage forms and updates do not route other cities to Hollywood reporting',()=>{
+ const forms=getResources('Hollywood','damage');
+ assert.equal(forms.length,2);
+ assert.ok(forms.some(r=>r.source==='https://hollywood.readyop.com/fs/4e2S/540038e9'));
+ assert.ok(forms.some(r=>r.source==='https://floridadisaster.biz/Respond/BusinessDamageAssessmentsSurvey'));
+ assert.ok(getResources('Hollywood','updates').some(r=>r.source==='https://www.choosehollywoodfl.com/m/newsflash/home/detail/394'));
+ for(const city of cities.filter(c=>c!=='Hollywood'))for(const service of ['damage','updates'])assert.ok(getResources(city,service).every(r=>!r.source.includes('readyop')&&!r.source.includes('BusinessDamageAssessmentsSurvey')));
+});
