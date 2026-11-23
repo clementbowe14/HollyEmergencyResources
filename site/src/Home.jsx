@@ -1,8 +1,11 @@
 import {ResourceCard} from './StormResources';
-import {recoveryGroups} from './stormResourceData';
+import {ResourceLink} from './ResourceLink';
+import {recoveryGroups,recoveryNotice} from './stormResourceData';
 export function Home(){return <section className="detail">
  <h1>Help for neighbors affected by flooding</h1><p className="lede">Hollywood, Florida · Flood recovery resources</p><p><a className="button" href="#help">Find help in your city</a></p><p>If you or someone you know in Hollywood was affected by the recent flooding, save and share these resources. Contact each organization directly to confirm eligibility and availability.</p>
+ <aside className="note"><h2>Hollywood Flood Recovery: More Assistance and Community Resources</h2><p>In its November 23, 2026 update, the City reports additional emergency funding for local agencies helping flood-affected residents. Contact the organizations below to learn what help is available.</p><ResourceLink href={recoveryNotice.source} checkedAt={recoveryNotice.checkedAt} target="_blank" rel="noreferrer">Read the City’s assistance announcement</ResourceLink></aside>
  <nav aria-label="Recovery resource sections" className="resource-actions">{recoveryGroups.map((g,i)=><a key={g.title} href={'#recovery-'+i} onClick={e=>{e.preventDefault();document.getElementById('recovery-'+i)?.focus();document.getElementById('recovery-'+i)?.scrollIntoView({block:'start'});}}>{g.title}</a>)}</nav>
- {recoveryGroups.map((group,i)=><section key={group.title} aria-labelledby={'recovery-'+i}><h2 id={'recovery-'+i} tabIndex={-1}>{group.title}</h2><div className="matched-resources">{group.items.map(r=><ResourceCard key={r.source} resource={r}/>)}</div></section>)}
+ {recoveryGroups.map((group,i)=><section key={group.title} aria-labelledby={'recovery-'+i}><h2 id={'recovery-'+i} tabIndex={-1}>{group.title}</h2><div className="matched-resources">{group.items.map(r=><ResourceCard key={r.title+r.source} resource={r}/>)}</div></section>)}
  <aside className="note"><h2>Keep records for recovery</h2><ul><li>Photograph all damage before beginning cleanup, when safe to do so.</li><li>Keep receipts for disaster-related expenses.</li><li>Contact your insurance company if you have coverage.</li></ul></aside>
+ <aside className="note"><h2>Save and share</h2><p>Share these resources with neighbors, family and friends affected by flooding. Check the City for the latest recovery information.</p><ResourceLink href="https://www.hollywoodcra.org/m/newsflash" checkedAt="2026-11-23" target="_blank" rel="noreferrer">Latest City updates and recovery resources</ResourceLink></aside>
  </section>;}
