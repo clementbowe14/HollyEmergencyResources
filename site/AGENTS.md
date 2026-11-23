@@ -17,3 +17,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Show the resource-review notice at the top of every page. Show recorded review dates beside resource links; never auto-advance dates or imply that unchecked links were verified.
 
 - Countywide resources are stored in `src/cityResources.js`. Preserve source URLs, review dates, historical/event qualifiers, and provider-by-address distinctions. Missing local contacts must be explicit county referrals; do not invent pickup locations or imply that shelters are open.
+
+- Home is the default landing page and contains flood recovery assistance. Storm updates is reserved for announcements; Get Help remains the city-first questionnaire.
