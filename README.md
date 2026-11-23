@@ -1,4 +1,4 @@
-# Velpazo
+# The Hollywood Watch
 Connecting Hollywood citizens with the resources they need in case of emergencies
 
 ## Deploy on Vercel
