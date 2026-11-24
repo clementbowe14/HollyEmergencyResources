@@ -19,3 +19,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Countywide resources are stored in `src/cityResources.js`. Preserve source URLs, review dates, historical/event qualifiers, and provider-by-address distinctions. Missing local contacts must be explicit county referrals; do not invent pickup locations or imply that shelters are open.
 
 - Home is the default landing page and contains flood recovery assistance. Storm updates is reserved for announcements; Get Help remains the city-first questionnaire.
+- Selected redesign: latest mobile option 3 (November 24, 2026), navy/teal wave header, pale resource panels and a prominent call action. Preserve existing routes and original source dates when translating mockups.
