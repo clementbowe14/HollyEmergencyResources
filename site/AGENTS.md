@@ -12,7 +12,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Get Help is a guided questionnaire: Broward city first, service second, then relevant results. Keep 911 visible throughout.
 - Use the supplied light-blue reference: pale background, navy text, compact top navigation, rounded white service cards and blue icon tiles. Keep the neighborhood-initiative notice requested by the user.
 - Sand pickup directory covers all Broward municipalities and unincorporated areas; only use map coordinates that have been verified. Distinguish sand pickup, empty bags/verification, and historical distribution sites. Never imply live availability from historical sources.
-- The app is named The Hollywood Watch, with a title-case `The Hollywood Watch` text wordmark. Preserve geographic names in service information.
+- The app is named The Broward Watch, with a title-case `The Broward Watch` text wordmark. Preserve geographic names in service information.
 
 - Show the resource-review notice at the top of every page. Show recorded review dates beside resource links; never auto-advance dates or imply that unchecked links were verified.
 
